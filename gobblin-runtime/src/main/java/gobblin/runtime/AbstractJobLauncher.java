@@ -61,8 +61,8 @@ public abstract class AbstractJobLauncher implements JobLauncher {
 
   private static final Logger LOG = LoggerFactory.getLogger(AbstractJobLauncher.class);
 
-  protected static final String TASK_STATE_STORE_TABLE_SUFFIX = ".tst";
-  protected static final String JOB_STATE_STORE_TABLE_SUFFIX = ".jst";
+  public static final String TASK_STATE_STORE_TABLE_SUFFIX = ".tst";
+  public static final String JOB_STATE_STORE_TABLE_SUFFIX = ".jst";
 
   // Framework configuration properties
   protected final Properties properties;

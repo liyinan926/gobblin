@@ -11,6 +11,7 @@
 
 package gobblin.runtime;
 
+import gobblin.runtime.spark.SparkJobLauncher;
 import java.util.Properties;
 
 import gobblin.configuration.ConfigurationKeys;
@@ -31,7 +32,8 @@ public class JobLauncherFactory {
   enum JobLauncherType {
     LOCAL,
     MAPREDUCE,
-    YARN
+    YARN,
+    SPARK
   }
 
   /**
@@ -49,6 +51,8 @@ public class JobLauncherFactory {
         return new LocalJobLauncher(properties);
       case MAPREDUCE:
         return new MRJobLauncher(properties);
+      case SPARK:
+        return new SparkJobLauncher(properties);
       default:
         throw new RuntimeException("Unsupported job launcher type: " + launcherType.name());
     }
